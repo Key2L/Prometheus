@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="p450_irregular_obstacles">
+    <static>true</static>
+
+    <!-- 东北侧：L 形高障碍物。 -->
+    <link name="l_shape">
+      <pose>3.2 2.4 0 0 0 0.25</pose>
+      <collision name="long_collision">
+        <pose>0 0 1.1 0 0 0</pose>
+        <geometry><box><size>1.8 0.45 2.2</size></box></geometry>
+      </collision>
+      <collision name="short_collision">
+        <pose>-0.675 0.575 1.1 0 0 0</pose>
+        <geometry><box><size>0.45 1.6 2.2</size></box></geometry>
+      </collision>
+      <visual name="long_visual">
+        <pose>0 0 1.1 0 0 0</pose>
+        <geometry><box><size>1.8 0.45 2.2</size></box></geometry>
+        <material>
+          <ambient>0.20 0.38 0.62 1</ambient>
+          <diffuse>0.25 0.48 0.78 1</diffuse>
+        </material>
+      </visual>
+      <visual name="short_visual">
+        <pose>-0.675 0.575 1.1 0 0 0</pose>
+        <geometry><box><size>0.45 1.6 2.2</size></box></geometry>
+        <material>
+          <ambient>0.20 0.38 0.62 1</ambient>
+          <diffuse>0.25 0.48 0.78 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- 西北侧：旋转的 T 形障碍物。 -->
+    <link name="t_shape">
+      <pose>-3.2 3.1 0 0 0 -0.35</pose>
+      <collision name="stem_collision">
+        <pose>0 -0.35 1.3 0 0 0</pose>
+        <geometry><box><size>0.5 1.8 2.6</size></box></geometry>
+      </collision>
+      <collision name="cap_collision">
+        <pose>0 0.55 1.3 0 0 0</pose>
+        <geometry><box><size>1.8 0.5 2.6</size></box></geometry>
+      </collision>
+      <visual name="stem_visual">
+        <pose>0 -0.35 1.3 0 0 0</pose>
+        <geometry><box><size>0.5 1.8 2.6</size></box></geometry>
+        <material>
+          <ambient>0.20 0.52 0.36 1</ambient>
+          <diffuse>0.24 0.66 0.44 1</diffuse>
+        </material>
+      </visual>
+      <visual name="cap_visual">
+        <pose>0 0.55 1.3 0 0 0</pose>
+        <geometry><box><size>1.8 0.5 2.6</size></box></geometry>
+        <material>
+          <ambient>0.20 0.52 0.36 1</ambient>
+          <diffuse>0.24 0.66 0.44 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- 西南侧：三段高度不同的折线障碍物。 -->
+    <link name="zigzag_shape">
+      <pose>-3.4 -2.6 0 0 0 0.2</pose>
+      <collision name="segment_a_collision">
+        <pose>-0.55 0.35 0.85 0 0 0.55</pose>
+        <geometry><box><size>1.35 0.42 1.7</size></box></geometry>
+      </collision>
+      <collision name="segment_b_collision">
+        <pose>0.25 0 1.05 0 0 -0.45</pose>
+        <geometry><box><size>1.5 0.42 2.1</size></box></geometry>
+      </collision>
+      <collision name="segment_c_collision">
+        <pose>0.85 -0.55 0.7 0 0 0.65</pose>
+        <geometry><box><size>1.1 0.42 1.4</size></box></geometry>
+      </collision>
+      <visual name="segment_a_visual">
+        <pose>-0.55 0.35 0.85 0 0 0.55</pose>
+        <geometry><box><size>1.35 0.42 1.7</size></box></geometry>
+        <material>
+          <ambient>0.62 0.38 0.16 1</ambient>
+          <diffuse>0.82 0.50 0.20 1</diffuse>
+        </material>
+      </visual>
+      <visual name="segment_b_visual">
+        <pose>0.25 0 1.05 0 0 -0.45</pose>
+        <geometry><box><size>1.5 0.42 2.1</size></box></geometry>
+        <material>
+          <ambient>0.62 0.38 0.16 1</ambient>
+          <diffuse>0.82 0.50 0.20 1</diffuse>
+        </material>
+      </visual>
+      <visual name="segment_c_visual">
+        <pose>0.85 -0.55 0.7 0 0 0.65</pose>
+        <geometry><box><size>1.1 0.42 1.4</size></box></geometry>
+        <material>
+          <ambient>0.62 0.38 0.16 1</ambient>
+          <diffuse>0.82 0.50 0.20 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- 东南侧：圆柱、斜方体和球体叠成的不规则障碍物。 -->
+    <link name="rock_shape">
+      <pose>3.8 -2.9 0 0 0 0</pose>
+      <collision name="base_collision">
+        <pose>0 0 0.7 0 0 0</pose>
+        <geometry><cylinder><radius>0.65</radius><length>1.4</length></cylinder></geometry>
+      </collision>
+      <collision name="middle_collision">
+        <pose>0.12 0.05 1.55 0 0 0.45</pose>
+        <geometry><box><size>1.0 0.8 1.1</size></box></geometry>
+      </collision>
+      <collision name="top_collision">
+        <pose>-0.12 0.08 2.05 0 0 0</pose>
+        <geometry><sphere><radius>0.55</radius></sphere></geometry>
+      </collision>
+      <visual name="base_visual">
+        <pose>0 0 0.7 0 0 0</pose>
+        <geometry><cylinder><radius>0.65</radius><length>1.4</length></cylinder></geometry>
+        <material>
+          <ambient>0.45 0.24 0.48 1</ambient>
+          <diffuse>0.60 0.32 0.65 1</diffuse>
+        </material>
+      </visual>
+      <visual name="middle_visual">
+        <pose>0.12 0.05 1.55 0 0 0.45</pose>
+        <geometry><box><size>1.0 0.8 1.1</size></box></geometry>
+        <material>
+          <ambient>0.45 0.24 0.48 1</ambient>
+          <diffuse>0.60 0.32 0.65 1</diffuse>
+        </material>
+      </visual>
+      <visual name="top_visual">
+        <pose>-0.12 0.08 2.05 0 0 0</pose>
+        <geometry><sphere><radius>0.55</radius></sphere></geometry>
+        <material>
+          <ambient>0.45 0.24 0.48 1</ambient>
+          <diffuse>0.60 0.32 0.65 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
